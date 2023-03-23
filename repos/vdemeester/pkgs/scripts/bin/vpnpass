@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-set -e
-key=$(authkey)
-echo -n "${key}" | pbcopy
