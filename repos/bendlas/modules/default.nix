@@ -1,6 +1,0 @@
-{
-
-  lsd = ./programs/lsd.nix;
-
-}
-
