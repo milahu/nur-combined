@@ -1,3 +1,0 @@
-[submodule "pkgs/nix-template"]
-	path = pkgs/nix-template
-	url = https://github.com/PhotonQuantum/nix-template
