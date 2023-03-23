@@ -1,8 +1,0 @@
-{
-  "url": "https://git.sr.ht/~rabbits/orca",
-  "rev": "692f803e0c06a669e3e2b3d21bc8dd07e135b4e6",
-  "sha256": "14p8scs7dznhmj6nnq3bzkj5w6m9c3m6kzhrf871493rw9ykspga",
-  "fetchSubmodules": false,
-  "deepClone": false,
-  "leaveDotGit": false
-}
