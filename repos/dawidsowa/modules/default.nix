@@ -1,3 +1,0 @@
-{
-  freshrss = ./freshrss.nix;
-}
