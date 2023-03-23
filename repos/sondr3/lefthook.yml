@@ -1,4 +1,0 @@
-pre-commit:
-  commands:
-    data:
-      run: nix-env -f . -qa --json | cmp --silent site/data/pkgs.json - 

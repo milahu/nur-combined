@@ -1,8 +1,0 @@
-result
-result-*
-
-.envrc
-.direnv/
-site/public/
-public/
-site/resources/_gen/
