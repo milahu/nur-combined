@@ -1,6 +1,0 @@
-{
-
-  particld = ./services/particld.nix;
-
-}
-
