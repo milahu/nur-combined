@@ -1,3 +1,0 @@
-#! /bin/sh
-curl -XPOST https://nur-update.herokuapp.com/update?repo=chisui
-
