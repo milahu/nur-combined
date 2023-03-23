@@ -1,0 +1,39 @@
+language: nix
+
+sudo: false
+
+env:
+  global:
+    - CACHIX_CACHE=fgaz
+    - NUR_REPO=fgaz
+
+matrix:
+  include:
+    - env: NIX_CHANNEL=https://nixos.org/channels/nixpkgs-unstable
+    - env: NIX_CHANNEL=https://nixos.org/channels/nixos-unstable
+    - env: NIX_CHANNEL=https://nixos.org/channels/nixos-21.05
+  allow_failures:
+    - env: NIX_CHANNEL=https://nixos.org/channels/nixos-21.05
+
+install:
+ - nix --version
+ # for cachix we need travis to be a trusted nix user
+ - echo "trusted-users = $USER" | sudo tee -a /etc/nix/nix.conf
+ - sudo systemctl restart nix-daemon
+ - if [ -n "${CACHIX_CACHE}" ]; then travis_retry nix-channel --update; fi
+ - if [ -n "${CACHIX_CACHE}" ]; then nix-env -i cachix; fi
+ - if [ -n "${CACHIX_CACHE}" ]; then cachix use "${CACHIX_CACHE}"; fi
+ - nix-channel --add "${NIX_CHANNEL}" nixpkgs
+ - travis_retry nix-channel --update
+
+script:
+ - outs=$(nix-build buildable.nix) && echo Produced $outs
+ - nix eval -f default.nix 'lib'
+ - nix eval -f default.nix 'modules'
+ - nix eval -f default.nix 'overlays'
+
+after_success:
+  - if [ -n "${CACHIX_CACHE}" ]; then cachix push "${CACHIX_CACHE}" $outs; fi
+  - if [ "false" = "${TRAVIS_PULL_REQUEST}" -a "master" = "${TRAVIS_BRANCH}" ]; then
+      curl -XPOST "https://nur-update.herokuapp.com/update?repo=${NUR_REPO}"; fi
+

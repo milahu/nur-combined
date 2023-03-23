@@ -1,0 +1,38 @@
+diff --git i/mk/flags.mk w/mk/flags.mk
+index baf62448e..7d5c2a74b 100644
+--- i/mk/flags.mk
++++ w/mk/flags.mk
+@@ -12,23 +12,23 @@ BUILD_DEPS_CPPFLAGS ?=
+ BUILD_DEPS_LDFLAGS ?=
+ 
+ CROSS_COMPILE ?=
+-CXX     ?= $(CROSS_COMPILE)g++
+-AR      ?= $(CROSS_COMPILE)ar
+-AS      ?= $(CROSS_COMPILE)as
+-LD      ?= $(CROSS_COMPILE)ld
+-NM      ?= $(CROSS_COMPILE)nm
+-OBJDUMP ?= $(CROSS_COMPILE)objdump
+-OBJCOPY ?= $(CROSS_COMPILE)objcopy
+-SIZE    ?= $(CROSS_COMPILE)size
++CXX     = $(CROSS_COMPILE)g++
++AR      = $(CROSS_COMPILE)ar
++AS      = $(CROSS_COMPILE)as
++LD      = $(CROSS_COMPILE)ld
++NM      = $(CROSS_COMPILE)nm
++OBJDUMP = $(CROSS_COMPILE)objdump
++OBJCOPY = $(CROSS_COMPILE)objcopy
++SIZE    = $(CROSS_COMPILE)size
+ 
+ ifeq ($(COMPILER),clang)
+ CC      ?= clang
+ # for clang LIBGCC_FINDER will be set externally to arm-none-eabi-gcc or something like that
+ else
+-CC      ?= $(CROSS_COMPILE)gcc
++CC      = $(CROSS_COMPILE)gcc
+ LIBGCC_FINDER=$(CC) $(CFLAGS)
+ endif
+-CPP     ?= $(CC) -E
++CPP     = $(CC) -E
+ 
+ comma_sep_list = $(subst $(\s),$(,),$(strip $1))
+ 

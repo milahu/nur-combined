@@ -1,0 +1,9 @@
+{
+    "baseVersion": "3.0.0-565",
+    "currentVersion": "3.0.0-565",
+    "buildVersion": "565",
+    "skippedVersions": [
+    ],
+    "inUsePkg": "",
+    "hasRan": false
+}
