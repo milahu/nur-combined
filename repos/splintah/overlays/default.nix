@@ -1,3 +1,0 @@
-{
-  passenv = import ./passenv.nix;
-}
