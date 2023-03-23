@@ -1,4 +1,0 @@
-{
-  veracrypt = ./veracrypt;
-}
-
