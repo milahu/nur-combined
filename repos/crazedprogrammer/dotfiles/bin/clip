@@ -1,7 +1,0 @@
-#!/bin/sh
-
-if is-wayland; then
-	wl-copy $@
-else
-	xclip -selection clipboard $@
-fi
