@@ -1,4 +1,0 @@
-[
-  [ "haunt" ]
-  [ "ipfs-cluster" ]
-]
