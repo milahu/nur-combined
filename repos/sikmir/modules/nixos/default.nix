@@ -1,3 +1,0 @@
-{
-  mbtileserver = ./services/mbtileserver.nix;
-}
