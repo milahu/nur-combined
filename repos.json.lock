@@ -1,8 +1,8 @@
 {
     "repos": {
         "milahu": {
-            "rev": "58832d25eac57939c958ccd0d9363cd629e67362",
-            "sha256": "062b50rivb948i4b7g07mqkhfirbi3h894814plf93m4rv1261db",
+            "rev": "65032b138ac5d56928a67f8e03b575f01cc39632",
+            "sha256": "07p2hmqxa26rj33x45saanw4yn73j386jlnjhy6q5qi2vxh493h9",
             "url": "https://github.com/milahu/nur-packages"
         }
     }
